@@ -38,7 +38,9 @@ if __name__ == '__main__':
     # create a Pool of processes
     p = Pool(processes=num_processors)
 
+    # create variable to store starting time of processing
     start = time.time()
+
     #### Return an appropriate output from the process that indicates whether the item is greater than 5.
     # use map() function to apply greater_than_5 function to rand_ints_list
     result = p.map(greater_than_5, rand_ints_list)
@@ -50,7 +52,9 @@ if __name__ == '__main__':
     #     print(rand_ints_list[i])
     #     result.append(greater_than_5(rand_ints_list[i]))
 
+    # create variable to store ending time of processing
     end = time.time()
+
     #### In your main, count how many of the items were greater than 5.  You should get something like 450,000
     print('\n# of times an integer was greater than five: ' + str(sum(result)))
-    print('\nProgram/Processing time = ' + str(end - start) + ' seconds')
+    print('Program/Processing time = ' + str(end - start) + ' seconds')
